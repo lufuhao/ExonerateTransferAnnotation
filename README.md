@@ -53,7 +53,7 @@
 
     * Convert genome to esd database; use '-s TRUE' if your genome softmasked
     * Index EST file; memory limit could be higher if allowed
-    * Load database to server, Note the server port if use a different one
+    * Load database to server, Note the server port number \[Default: 12886\] if use a different one
 
 > fasta2esd -s FALSE -f new_genome.fa -o your_prefix.esd
 >
