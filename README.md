@@ -60,11 +60,11 @@
 
 - Map cDNA and CDS separately 
 
-     Split fasta file into small ones to accelerate mapping
-     Exonerate mapping
-     Convert Exonerate GFF2 to GFF3
+    Split fasta file into small ones to accelerate mapping
+    Exonerate mapping
+    Convert Exonerate GFF2 to GFF3
 
-     Output: your_prefix.cdna.EXONERATE_OUT.gff3
+    Output: your_prefix.cdna.EXONERATE_OUT.gff3
 
 > exonerate_server_running_est2genome.sh -i your_prefix.cdna.fasta -r 12886 -s -p your_prefix.cdna
 
