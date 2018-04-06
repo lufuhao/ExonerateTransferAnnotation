@@ -6,9 +6,10 @@
 +  Transfer GFF3 to new assemblies
 +  Reccommend: use [RATT](http://www.sanger.ac.uk/science/tools/pagit) first
 +  Use this tool for some remaining genes
->  Note: Exonerate might not transfer short exon/CDS very well
 
->        so need a further check; Method included as below.
+    Note: 
+      * exonerate might not transfer short exon/CDS very well
+      * so need a further check; Method included as below.
 
 ## Steps
 
