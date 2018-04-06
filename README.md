@@ -55,7 +55,9 @@
     Load database to server, Note the server port if use a different one
 
 > fasta2esd -s FALSE -f new_genome.fa -o your_prefix.esd
+
 > esd2esi $opt_p.esd your_prefix.esi --memorylimit 1024
+
 > exonerate-server your_prefix.esi --port 12886  &
 
 - Map cDNA and CDS separately 
