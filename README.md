@@ -11,6 +11,7 @@
     Note: 
       * exonerate might not transfer short exon/CDS very well
       * so need a further check; Method included as below.
+      * gff2fasta_luf.pl would help convert GFF3 + genome.fa to EMBL
 
 ## Steps
 
