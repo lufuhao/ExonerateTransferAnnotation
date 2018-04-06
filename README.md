@@ -47,7 +47,7 @@
     exonerate_server_running_est2genome.sh    Included
     fasta_splitter.pl                         https://github.com/lufuhao/FuhaoBin/ subfolder FuhaoPerl
     exonerate_gff2_to_gff3.pl                 https://github.com/lufuhao/FuhaoBin/ subfolder FuhaoPerl
-    Exonerate
+    [Exonerate](https://www.ebi.ac.uk/about/vertebrate-genomics/software/exonerate)
 
 #### 2.2. CMD
 
@@ -89,7 +89,7 @@
 #### 3.1. Requirements
 
     exonerate_cDNA_CDS_merge_to_GFF3.sh    Included
-    exonerate_GFF3_reformat.pl             https://github.com/lufuhao/FuhaoBin/ subfolder FuhaoPerl
+    exonerate_GFF3_reformat.pl             Included
 
 #### 3.2. CMD
 
