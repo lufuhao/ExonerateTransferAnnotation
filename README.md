@@ -34,9 +34,9 @@
 
   Output gene ID list for later
 
-    OutputL: "your_prefix.genelist"
+    Output: "your_prefix.genelist"
 
->    perl -lane 'if ($F[2]=~/^gene$/i) {$F[8]=~s/^.*ID=//;$F[8]=~s/;.*$//;print $F[8];}' your.gff3 | sort -u > your_prefix.genelist
+>    perl -lane 'if ($F[2]=~/^gene$/i) {$F[8]=~s/^.\*ID=//;$F[8]=~s/;.\*$//;print $F[8];}' your.gff3 | sort -u > your_prefix.genelist
 
 ### Step2: run Exonerate in server mode
 
