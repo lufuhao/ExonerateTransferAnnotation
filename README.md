@@ -18,7 +18,7 @@
 
 #### 1.1 Requirements
 
-    gff2fasta_luf.pl available at https://github.com/lufuhao/FuhaoBin/ subfolder FuhaoPerl 
+    gff2fasta_luf.pl                          [FuhaoBin](https://github.com/lufuhao/FuhaoBin/) subfolder
 
 #### 1.2 CMD
 
