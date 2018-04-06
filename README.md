@@ -30,7 +30,7 @@
 
     Output: "your_prefix.cds.fasta"
 
->    gff2fasta_luf.pl -f genome.fa -g your.gff3 -s 3 -p your_prefix
+>    gff2fasta_luf.pl -f old_genome.fa -g your.gff3 -s 3 -p your_prefix
 
   Output gene ID list for later
 
@@ -45,6 +45,7 @@
     exonerate_server_running_est2genome.sh    Included
     fasta_splitter.pl                         https://github.com/lufuhao/FuhaoBin/ subfolder FuhaoPerl
     exonerate_gff2_to_gff3.pl                 https://github.com/lufuhao/FuhaoBin/ subfolder FuhaoPerl
+    Exonerate
 
 #### 2.2. CMD
 
@@ -57,9 +58,9 @@
     Load database to server, Note the server port if use a different one
 
 > fasta2esd -s FALSE -f new_genome.fa -o your_prefix.esd
-
+>
 > esd2esi $opt_p.esd your_prefix.esi --memorylimit 1024
-
+>
 > exonerate-server your_prefix.esi --port 12886  &
 
 - Map cDNA and CDS separately 
@@ -81,18 +82,53 @@
 
 
     Note:
-    + More options available by
+      * More options available by
 
 > exonerate_server_running_est2genome.sh -h
 
-    + To close Exonerate server, add '-x' option in your last exonerate_server_running_est2genome.sh run or use 'ps -ef' to check exonerate process number and kill it
+      * To close Exonerate server, add '-x' option in your last exonerate_server_running_est2genome.sh run or use 'ps -ef' to check exonerate process number and kill it
 
-    + use '-b [INT]' to declare the bestn number you want to avoid unwanted mapping
+      * use '-b [INT]' to declare the bestn number you want to avoid unwanted mapping
 
 ### Step3: Intergrate cDNA and CDS 
 
+#### 3.1. Requirements
+
+    exonerate_cDNA_CDS_merge_to_GFF3.sh    Included
+    exonerate_GFF3_reformat.pl             https://github.com/lufuhao/FuhaoBin/ subfolder FuhaoPerl
+
+#### 3.2. CMD
+
+    Output: your_prefix.integrated.gff3
+
+> exonerate_cDNA_CDS_merge_to_GFF3.sh -i your_prefix.genelist -n your_prefix.cdna.EXONERATE_OUT.gff3 -s your_prefix.cds.EXONERATE_OUT.gff3 -o your_prefix.integrated.gff3
+
+### Step4: Inspect GFF3 with genome viewer
+
+#### 4.1. Requirements
+
+    gff3_checker.pl               https://github.com/lufuhao/FuhaoBin/ subfolder FuhaoPerl
+
+#### 4.2. Requirements
+
+    Output: your_prefix.integrated.correct.gff3
+
+> gff3_checker.pl your_prefix.integrated.gff3 your_prefix.integrated.correct.gff3 new_genome.fa > gff3checker.log 2>&1
+
+    Note:
+      * check log file 'gff3checker.log' to view the error message
+      * Manually correct the error in your your_prefix.integrated.gff3
+      * Need genome browser: IGV
 
 
-
-    
-
+## Author:
+>
+>  Fu-Hao Lu
+>
+>  Post-Doctoral Scientist in Micheal Bevan laboratory
+>
+>  Cell and Developmental Department, John Innes Centre
+>
+>  Norwich NR4 7UH, United Kingdom
+>
+>  E-mail: Fu-Hao.Lu@jic.ac.uk
