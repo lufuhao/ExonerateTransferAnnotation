@@ -26,7 +26,9 @@
 
     Output: "your_prefix.cdna.fasta"
 
+<span style="color:blue">
 >    gff2fasta_luf.pl -f old_genome.fa -g your.gff3 -s 3 -p your_prefix
+</span>
 
   For CDS sequences
 
