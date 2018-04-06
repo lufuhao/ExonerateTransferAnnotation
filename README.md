@@ -18,7 +18,7 @@
 
 #### 1.1 Requirements
 
-  * gff2fasta_luf.pl                          [FuhaoBin](https://github.com/lufuhao/FuhaoBin/) subfolder
+  * gff2fasta_luf.pl :                        [FuhaoBin](https://github.com/lufuhao/FuhaoBin/) subfolder
 
 #### 1.2 CMD
 
@@ -44,9 +44,9 @@
 
 #### 2.1. Requirements
 
-  * exonerate_server_running_est2genome.sh    Included
-  * fasta_splitter.pl                         [FuhaoBin](https://github.com/lufuhao/FuhaoBin/) subfolder FuhaoPerl
-  * exonerate_gff2_to_gff3.pl                 [FuhaoBin](https://github.com/lufuhao/FuhaoBin/) subfolder FuhaoPerl
+  * exonerate_server_running_est2genome.sh  :   Included
+  * fasta_splitter.pl :                        [FuhaoBin](https://github.com/lufuhao/FuhaoBin/) subfolder FuhaoPerl
+  * exonerate_gff2_to_gff3.pl :               [FuhaoBin](https://github.com/lufuhao/FuhaoBin/) subfolder FuhaoPerl
   * [Exonerate](https://www.ebi.ac.uk/about/vertebrate-genomics/software/exonerate)
 
 #### 2.2. CMD
@@ -88,8 +88,8 @@
 
 #### 3.1. Requirements
 
-  * exonerate_cDNA_CDS_merge_to_GFF3.sh    Included
-  * exonerate_GFF3_reformat.pl             Included
+  * exonerate_cDNA_CDS_merge_to_GFF3.sh :  Included
+  * exonerate_GFF3_reformat.pl :           Included
 
 #### 3.2. CMD
 
@@ -101,7 +101,7 @@
 
 #### 4.1. Requirements
 
-  * gff3_checker.pl               [FuhaoBin](https://github.com/lufuhao/FuhaoBin/) subfolder FuhaoPerl
+  * gff3_checker.pl :             [FuhaoBin](https://github.com/lufuhao/FuhaoBin/) subfolder FuhaoPerl
 
 #### 4.2. Requirements
 
