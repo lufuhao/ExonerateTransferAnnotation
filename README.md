@@ -45,8 +45,8 @@
 #### 2.1. Requirements
 
     exonerate_server_running_est2genome.sh    Included
-    fasta_splitter.pl                         https://github.com/lufuhao/FuhaoBin/ subfolder FuhaoPerl
-    exonerate_gff2_to_gff3.pl                 https://github.com/lufuhao/FuhaoBin/ subfolder FuhaoPerl
+    fasta_splitter.pl                         [FuhaoBin](https://github.com/lufuhao/FuhaoBin/) subfolder FuhaoPerl
+    exonerate_gff2_to_gff3.pl                 [FuhaoBin](https://github.com/lufuhao/FuhaoBin/) subfolder FuhaoPerl
     [Exonerate](https://www.ebi.ac.uk/about/vertebrate-genomics/software/exonerate)
 
 #### 2.2. CMD
@@ -101,7 +101,7 @@
 
 #### 4.1. Requirements
 
-    gff3_checker.pl               https://github.com/lufuhao/FuhaoBin/ subfolder FuhaoPerl
+    gff3_checker.pl               [FuhaoBin](https://github.com/lufuhao/FuhaoBin/) subfolder FuhaoPerl
 
 #### 4.2. Requirements
 
