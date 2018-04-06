@@ -51,7 +51,9 @@
 - Set up Exonerate server on your new_genome.fa
 
     Convert genome to esd database; use '-s TRUE' if your genome softmasked
+
     Index EST file; memory limit could be higher if allowed
+
     Load database to server, Note the server port if use a different one
 
 > fasta2esd -s FALSE -f new_genome.fa -o your_prefix.esd
@@ -63,7 +65,9 @@
 - Map cDNA and CDS separately 
 
     Split fasta file into small ones to accelerate mapping
+
     Exonerate mapping
+
     Convert Exonerate GFF2 to GFF3
 
     Output: your_prefix.cdna.EXONERATE_OUT.gff3
@@ -76,14 +80,14 @@
 
 
 
-   Note:
-   + More options available by
+    Note:
+    + More options available by
 
 > exonerate_server_running_est2genome.sh -h
 
-   + To close Exonerate server, add '-x' option in your last exonerate_server_running_est2genome.sh run or use 'ps -ef' to check exonerate process number and kill it
+    + To close Exonerate server, add '-x' option in your last exonerate_server_running_est2genome.sh run or use 'ps -ef' to check exonerate process number and kill it
 
-   + use '-b [INT]' to declare the bestn number you want to avoid unwanted mapping
+    + use '-b [INT]' to declare the bestn number you want to avoid unwanted mapping
 
 ### Step3: Intergrate cDNA and CDS 
 
