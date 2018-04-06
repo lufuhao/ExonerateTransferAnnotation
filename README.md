@@ -6,6 +6,7 @@
 +  Transfer GFF3 to new assemblies
 +  Reccommend: use [RATT](http://www.sanger.ac.uk/science/tools/pagit) first
 +  Use this tool for some remaining genes
++  More options available for each script by add '-h' or '--help'
 
     Note: 
       * exonerate might not transfer short exon/CDS very well
@@ -79,10 +80,6 @@
 
 
     Note:
-      * More options available by
-
-> exonerate_server_running_est2genome.sh -h
-
       * To close Exonerate server, add '-x' option in your last exonerate_server_running_est2genome.sh run or use 'ps -ef' to check exonerate process number and kill it
 
       * use '-b [INT]' to declare the bestn number you want to avoid unwanted mapping
