@@ -129,3 +129,7 @@
 >  Norwich NR4 7UH, United Kingdom
 >
 >  E-mail: Fu-Hao.Lu@jic.ac.uk
+
+## Copyright 
+
+	(c) 2017-2018 Fu-Hao Lu
