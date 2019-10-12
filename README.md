@@ -1,5 +1,6 @@
 # ExonerateTransferAnnotation
 
+RRID: [SCR_017557](https://scicrunch.org/resolver/RRID:SCR_017557)
 
 ## Description
 
