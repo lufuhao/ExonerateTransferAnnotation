@@ -310,7 +310,7 @@ fi
 
 if [ $opt_k -ne 0 ]; then
 	echo "${ProgramName}info: Cleaning $rundir/exonerateout $rundir/split"
-	rm -rf $rundir/exonerateout $rundir/split > dev/null 2>&1
+	rm -rf $rundir/exonerateout $rundir/split > /dev/null 2>&1
 fi
 
 echo "### JOB done ###"
