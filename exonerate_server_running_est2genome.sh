@@ -287,7 +287,7 @@ cd $rundir/exonerateout
 for myfasta in `ls $rundir/split/${opt_p}*.fa`; do
 	echo "### Mapping fasta: $myfasta"
 	fabasename=${myfasta##*/}
-	exonerate --model $opt_mode $myfasta localhost:$opt_r --percent $opt_e --score 100 --showvulgar yes --bestn $bestn --minintron 20 --softmaskquery no --softmasktarget no --ryo ">%qi length=%ql alnlen=%qal\n>%ti length=%tl alnlen=%tal\n" --showalignment no  --showtargetgff yes --geneseed 250  > $rundir/exonerateout/$fabasename.EXONERATE_OUT
+	exonerate --model $opt_mode $myfasta localhost:$opt_r --percent $opt_e --score 100 --showvulgar yes --bestn $bestn --minintron 20 --maxintron 200000 --softmaskquery no --softmasktarget no --ryo ">%qi length=%ql alnlen=%qal\n>%ti length=%tl alnlen=%tal\n" --showalignment no  --showtargetgff yes --geneseed 250  > $rundir/exonerateout/$fabasename.EXONERATE_OUT
 	if [ $? -ne 0 ] || [ ! -s "$rundir/exonerateout/$fabasename.EXONERATE_OUT" ]; then
 		echo "${ProgramName}Warnings: Exonerate might fail on $myfasta" >&2
 	fi
