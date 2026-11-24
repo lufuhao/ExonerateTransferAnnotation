@@ -20,7 +20,7 @@ echo "ProgName: $ProgramName"
 
 $0 --- running exonerate in server mode
 
-Version: 20180226
+Version: 20261124
 
 Requirements:
   Linux: perl, grep
@@ -192,6 +192,8 @@ if [ $opt_s -eq 0 ]; then
 		echo "${ProgramName}Error: invalid memory limit specified by '-m'" >&2;
 		exit 100;
 	fi
+else
+	echo "Info: skipping -g -m check"
 fi
 if [[ "$opt_n" =~ ^[0-9]+$ ]] && (( $opt_n > 0 )); then
 	echo "${ProgramName}Info: split number accepted: $opt_n"
@@ -228,7 +230,7 @@ else
 	echo "Error: unknown exonerate run mode $opt_mode" >&2
 	exit 100
 fi
-
+exit 0
 
 #################### Input and Output ###############################
 
@@ -262,6 +264,8 @@ if [ $opt_s -eq 0 ]; then
 		echo "${ProgramName}Error: build exonerate server error" >&2
 		exit 1
 	fi
+else
+	echo "Info: skipping exonerate server"
 fi
 
 echo "### 2. Spilt fasta: $opt_n seq each file"
