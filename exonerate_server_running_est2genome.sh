@@ -224,10 +224,10 @@ if [ -e "$opt_o" ]; then
 	echo "${ProgramName}Error: final output existing: $opt_o" >&2;
 	exit 100;
 fi
-if [ "$opt_d" == "est2genome" ] || [ "$opt_mode" == "coding2genome" ] || [ "$opt_mode" =="cdna2genome" ]; then
-	echo "Info: exonerate run mode $opt_mode"
+if [ "$opt_d" == "est2genome" ] || [ "$opt_d" == "coding2genome" ] || [ "$opt_d" =="cdna2genome" ]; then
+	echo "Info: exonerate run mode $opt_d"
 else
-	echo "Error: unknown exonerate run mode $opt_mode" >&2
+	echo "Error: unknown exonerate run mode $opt_d" >&2
 	exit 100
 fi
 exit 0
@@ -291,7 +291,7 @@ cd $rundir/exonerateout
 for myfasta in `ls $rundir/split/${opt_p}*.fa`; do
 	echo "### Mapping fasta: $myfasta"
 	fabasename=${myfasta##*/}
-	exonerate --model $opt_mode $myfasta localhost:$opt_r --percent $opt_e --score 100 --showvulgar yes --bestn $bestn --minintron 20 --maxintron 200000 --softmaskquery no --softmasktarget no --ryo ">%qi length=%ql alnlen=%qal\n>%ti length=%tl alnlen=%tal\n" --showalignment no  --showtargetgff yes --geneseed 250  > $rundir/exonerateout/$fabasename.EXONERATE_OUT
+	exonerate --model $opt_d $myfasta localhost:$opt_r --percent $opt_e --score 100 --showvulgar yes --bestn $bestn --minintron 20 --maxintron 200000 --softmaskquery no --softmasktarget no --ryo ">%qi length=%ql alnlen=%qal\n>%ti length=%tl alnlen=%tal\n" --showalignment no  --showtargetgff yes --geneseed 250  > $rundir/exonerateout/$fabasename.EXONERATE_OUT
 	if [ $? -ne 0 ] || [ ! -s "$rundir/exonerateout/$fabasename.EXONERATE_OUT" ]; then
 		echo "${ProgramName}Warnings: Exonerate might fail on $myfasta" >&2
 	fi
