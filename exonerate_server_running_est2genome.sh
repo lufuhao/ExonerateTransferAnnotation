@@ -42,7 +42,7 @@ Options:
   -o    Final output (Default: \$prefix.EXONERATE_OUT)
   -n    Seqeunce number to split for each fasta file (Default: 5000)
   -e    Exenonerate --percent option (Default: 70)
-  -M    Mode: [est2genome], coding2genome, cdna2genome
+  -d    Mode: [est2genome], coding2genome, cdna2genome
   -p    Output prefix (Default: "MyExonerate")
   -m    Memory limit (MB) (Default: 1024)
   -b    -bestn [INT] for exonerate [10]
@@ -79,7 +79,7 @@ opt_g=""
 opt_n=5000
 opt_p="MyExonerate"
 opt_m=1024
-opt_mode="est2genome"
+opt_d="est2genome"
 opt_r=12886
 opt_o=0
 opt_s=0
@@ -98,7 +98,7 @@ while [ -n "$1" ]; do
     -e) opt_e=$2;shift 2;;
     -p) opt_p=$2;shift 2;;
     -m) opt_m=$2;shift 2;;
-    -M) opt_mode=$2;shift 2;;
+    -d) opt_d=$2;shift 2;;
     -r) opt_r=$2;shift 2;;
     -b) bestn=$2;shift 2;;
     -k) opt_k=1;shift;; 
@@ -224,7 +224,7 @@ if [ -e "$opt_o" ]; then
 	echo "${ProgramName}Error: final output existing: $opt_o" >&2;
 	exit 100;
 fi
-if [ "$opt_mode" == "est2genome" ] || [ "$opt_mode" == "coding2genome" ] || [ "$opt_mode" =="cdna2genome" ]; then
+if [ "$opt_d" == "est2genome" ] || [ "$opt_mode" == "coding2genome" ] || [ "$opt_mode" =="cdna2genome" ]; then
 	echo "Info: exonerate run mode $opt_mode"
 else
 	echo "Error: unknown exonerate run mode $opt_mode" >&2
