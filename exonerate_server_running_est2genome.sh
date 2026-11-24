@@ -182,18 +182,12 @@ if [ ! -s "$opt_i" ]; then
 	exit 100;
 fi
 if [ $opt_s -eq 0 ]; then
-	if [ -z "$opt_g" ] || [ ! -s "$opt_g" ]; then
-		echo "${ProgramName}Error: input genome sequence file not found" >&2;
-		exit 100;
-	fi
 	if [[ "$opt_m" =~ ^[0-9]+$ ]] && (( $opt_m > 0 )); then
 		echo "${ProgramName}Info: memory limit accepted: $opt_m"
 	else
 		echo "${ProgramName}Error: invalid memory limit specified by '-m'" >&2;
 		exit 100;
 	fi
-else
-	echo "Info: skipping -g -m check"
 fi
 if [[ "$opt_n" =~ ^[0-9]+$ ]] && (( $opt_n > 0 )); then
 	echo "${ProgramName}Info: split number accepted: $opt_n"
@@ -213,16 +207,12 @@ if [ -z "$opt_p" ]; then
 	exit 100;
 fi
 
-if [ "$opt_o" = "0" ]; then
+if [ "$opt_o" == "0" ]; then
 	opt_o="${opt_p}.exonerateout"
 elif [ -z "$opt_o" ]; then
 	opt_o="${opt_p}.exonerateout"
 	echo "${ProgramName}Error: invalid final output specified by '-o'" >&2;
 	echo "                     using default -o : $opt_o" >&2;
-fi
-if [ -e "$opt_o" ]; then
-	echo "${ProgramName}Error: final output existing: $opt_o" >&2;
-	exit 100;
 fi
 if [ "$opt_d" == "est2genome" ] || [ "$opt_d" == "coding2genome" ] || [ "$opt_d" =="cdna2genome" ]; then
 	echo "Info: exonerate run mode $opt_d"
@@ -230,19 +220,27 @@ else
 	echo "Error: unknown exonerate run mode $opt_d" >&2
 	exit 100
 fi
-exit 0
+
+
 
 #################### Input and Output ###############################
-
-
+if [ ! -s "$opt_i" ]; then
+	echo "${ProgramName}Error: input ESTs sequence file not found" >&2;
+	exit 100;
+fi
+if [ $opt_s -eq 0 ]; then
+	if [ -z "$opt_g" ] || [ ! -s "$opt_g" ]; then
+		echo "${ProgramName}Error: input genome sequence file not found" >&2;
+		exit 100;
+	fi
+fi
+if [ -e "$opt_o" ]; then
+	echo "${ProgramName}Error: final output existing: $opt_o" >&2;
+	exit 100;
+fi
 
 
 #################### Main ###########################################
-if [ $? -ne 0 ] || [ ! -s $gffout ]; then
-	echo "${ProgramName}Error: sort error" >&2
-	exit 1
-fi
-
 rundir=$PWD
 
 echo "### PWD: $rundir"
