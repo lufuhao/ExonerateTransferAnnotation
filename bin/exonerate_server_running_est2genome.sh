@@ -293,7 +293,6 @@ for myfasta in `ls $rundir/split/${opt_p}*.fa`; do
 	if [ $? -ne 0 ] || [ ! -s "$rundir/exonerateout/$fabasename.EXONERATE_OUT" ]; then
 		echo "${ProgramName}Warnings: Exonerate might fail on $myfasta" >&2
 	fi
-	
 done
 
 
